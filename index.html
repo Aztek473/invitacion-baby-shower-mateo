@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower de Mateo José 🍼</title>
+    
+    <!-- Meta tags for SEO & sharing -->
+    <meta name="description" content="Estás cordialmente invitado a celebrar con nosotros la dulce espera de nuestro hijo Mateo José. ¡Te esperamos!">
+    <meta property="og:title" content="Baby Shower de Mateo José 🍼">
+    <meta property="og:description" content="Acompáñanos a celebrar la llegada de Mateo José. Conoce los detalles de hora, lugar y confirma tu asistencia.">
+    <meta property="og:image" content="assets/baby_shower_bg.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Canvas Confetti Library for RSVP celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Floating Background Elements (Stars & Clouds) -->
+    <div class="floating-bg-elements">
+        <div class="cloud cloud-1"><i class="fa-solid fa-cloud"></i></div>
+        <div class="cloud cloud-2"><i class="fa-solid fa-cloud"></i></div>
+        <div class="cloud cloud-3"><i class="fa-solid fa-cloud"></i></div>
+        <div class="cloud cloud-4"><i class="fa-solid fa-cloud"></i></div>
+        <div class="cloud cloud-5"><i class="fa-solid fa-cloud"></i></div>
+        <div class="star star-1"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-2"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-3"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-4"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-5"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-6"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-7"><i class="fa-solid fa-star"></i></div>
+        <div class="star star-8"><i class="fa-solid fa-star"></i></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <header class="hero" id="home">
+            <div class="hero-banner-container">
+                <img src="assets/baby_shower_elephant.png" alt="Baby Shower Elephant" class="hero-image-banner">
+                <div class="hero-text-overlay">
+                    <span class="hero-subtitle">¡Baby Shower!</span>
+                    <h1 class="hero-title">Mateo José</h1>
+                    <p class="hero-tagline">La dulce espera está por terminar y queremos compartir este momento mágico contigo.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Parents Section -->
+        <section class="section parents-section" id="padres">
+            <div class="card glass-card text-center fade-in">
+                <div class="card-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h2>Nuestros Papás</h2>
+                <div class="parents-names">
+                    <div class="parent">
+                        <span class="role">Mamá</span>
+                        <h3 class="name">Yeraldine Tarmeño Segovia</h3>
+                    </div>
+                    <div class="divider-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="parent">
+                        <span class="role">Papá</span>
+                        <h3 class="name">Anthony Chavez Ulloa</h3>
+                    </div>
+                </div>
+                <p class="parents-message">
+                    "Con inmensa alegría y el corazón lleno de amor, les invitamos a celebrar la pronta llegada de nuestro amado hijo Mateo José."
+                </p>
+            </div>
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="section countdown-section" id="cuenta-atras">
+            <div class="text-center fade-in">
+                <h2 class="section-title">Faltan</h2>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="days" class="number">00</span>
+                        <span class="label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="number">00</span>
+                        <span class="label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="number">00</span>
+                        <span class="label">Min.</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="number">00</span>
+                        <span class="label">Seg.</span>
+                    </div>
+                </div>
+                <!-- Interactive Action buttons -->
+                <div class="action-buttons-row">
+                    <button class="btn btn-secondary" id="addToCalendarBtn">
+                        <i class="fa-regular fa-calendar-plus"></i> Guardar Fecha
+                    </button>
+                    <button class="btn btn-outline" onclick="window.print()">
+                        <i class="fa-solid fa-file-pdf"></i> Imprimir / PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details (When & Where) -->
+        <section class="section details-section" id="detalles">
+            <div class="grid-2">
+                <!-- Location Details -->
+                <div class="transparent-card fade-in">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h2>¿Dónde será?</h2>
+                    <h3 class="detail-subtitle">Lugar del Evento</h3>
+                    <p class="address-text">
+                        Jr. Coronel León Velarde 799-701<br>
+                        <strong>Lince, Lima</strong>
+                    </p>
+                    <a href="https://maps.app.goo.gl/Rs6CiBfnCFyMLL6JA" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+                        <i class="fa-solid fa-location-arrow"></i> Ver en Google Maps
+                    </a>
+                </div>
+
+                <!-- Time & Date Details -->
+                <div class="transparent-card fade-in">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h2>¿A qué hora?</h2>
+                    <h3 class="detail-subtitle">Fecha y Horario</h3>
+                    <p class="date-text" id="eventDateText">
+                        Sábado, 4 de Julio de 2026
+                    </p>
+                    <p class="time-text">
+                        7:30 PM - 11:00 PM
+                    </p>
+                    <span class="badge">¡Te esperamos puntual!</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Gift registry section -->
+        <section class="section gifts-section" id="regalos">
+            <div class="card glass-card text-center fade-in">
+                <div class="card-icon">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <h2>Mesa de Regalos / Detalles</h2>
+                <p class="gift-msg">Tu presencia es nuestro mejor regalo, pero si deseas hacernos un detalle para la llegada de Mateo José, puedes hacerlo en efectivo o a través de nuestra lista de regalos.</p>
+                <div class="gift-options">
+                    <div class="gift-option-card">
+                        <i class="fa-solid fa-wallet"></i>
+                        <h3>Lluvia de Sobres</h3>
+                        <p>Habrá una cajita de sobres en la entrada del evento para colocar tu presente en efectivo.</p>
+                    </div>
+                    <div class="gift-option-card">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <h3>Yape / Plin</h3>
+                        <p>Puedes enviarlo al celular de Anthony o Yeraldine de manera rápida y segura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Direct Confirmation Section -->
+        <section class="section rsvp-section" id="confirmacion">
+            <div class="card glass-card text-center fade-in">
+                <div class="card-icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h2>Confirmar Asistencia</h2>
+                <p class="subtitle-p">Para ayudarnos a organizar este día tan especial, por favor confírmanos tu asistencia enviándonos un WhatsApp directo:</p>
+                
+                <div class="whatsapp-container">
+                    <div class="whatsapp-buttons">
+                        <a href="https://wa.me/51912166533?text=%C2%A1Hola%21+Confirmo+mi+asistencia+al+Baby+Shower+de+Mateo+Jos%C3%A9.+%F0%9F%8D%BC" target="_blank" class="btn btn-whatsapp btn-large">
+                            <i class="fa-brands fa-whatsapp"></i> Confirmar con Mamá
+                        </a>
+                        <a href="https://wa.me/51977528816?text=%C2%A1Hola%21+Confirmo+mi+asistencia+al+Baby+Shower+de+Mateo+Jos%C3%A9.+%F0%9F%8D%BC" target="_blank" class="btn btn-whatsapp btn-large">
+                            <i class="fa-brands fa-whatsapp"></i> Confirmar con Papá
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <p>Con mucho amor,</p>
+            <p class="footer-names">Anthony & Yeraldine</p>
+            <p class="footer-date">© 2026 - Celebrando a Mateo José</p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
