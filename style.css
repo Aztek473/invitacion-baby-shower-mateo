@@ -1174,6 +1174,73 @@ p {
     animation: float 4s ease-in-out infinite;
 }
 
+/* Wishlist Glowing Shimmer Button Styles */
+.btn-wishlist-glow {
+    margin-top: 1.2rem;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    border-radius: var(--border-radius-md);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #a2c4ec, #cce0f5);
+    color: var(--primary-darker);
+    transition: all 0.3s ease;
+    animation: glow-pulse 3s infinite alternate;
+}
+
+.btn-wishlist-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 2;
+    animation: shine-sweep 4s infinite ease-in-out;
+}
+
+.btn-wishlist-glow:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 5px 15px rgba(162, 196, 236, 0.6);
+    background: linear-gradient(135deg, #b3d1f3, #ddedfd);
+}
+
+@keyframes shine-sweep {
+    0% {
+        left: -120%;
+    }
+    25% {
+        left: 200%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 6px rgba(162, 196, 236, 0.4), 0 0 10px rgba(162, 196, 236, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 16px rgba(162, 196, 236, 0.8), 0 0 22px rgba(162, 196, 236, 0.4);
+    }
+}
+
 /* Print Styles for PDF Generation */
 @media print {
     body {
