@@ -111,16 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!waAttendanceSelect || !waMamaBtn || !waPapaBtn) return;
         
         const selection = waAttendanceSelect.value;
-        let baseMsg = "¡Hola! Confirmo mi asistencia al Baby Shower de Mateo José. ";
+        let baseMsg = "\u00A1Hola! Confirmo mi asistencia al Baby Shower de Mateo Jos\u00E9. ";
         
         if (selection === 'solo') {
-            baseMsg += "Iré solo/a. 🍼";
+            baseMsg += "Ir\u00E9 solo/a. \u{1F37C}";
         } else if (selection === 'acompanante') {
-            baseMsg += "Iré con 1 acompañante. 🍼";
+            baseMsg += "Ir\u00E9 con 1 acompa\u00F1ante. \u{1F37C}";
         } else if (selection === 'acompanantes') {
-            baseMsg += "Iré con acompañantes. 🍼";
+            baseMsg += "Ir\u00E9 con acompa\u00F1antes. \u{1F37C}";
         } else if (selection === 'no_asistire') {
-            baseMsg = "¡Hola! Lamentablemente no podré asistir al Baby Shower de Mateo José. Les envío un fuerte abrazo. ❤️";
+            baseMsg = "\u00A1Hola! Lamentablemente no podr\u00E9 asistir al Baby Shower de Mateo Jos\u00E9. Les env\u00EDo un fuerte abrazo. \u{2764}\u{FE0F}";
         }
         
         // Fully percent-encode to prevent emoji character encoding issues (like ? instead of emoji)
