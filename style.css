@@ -206,40 +206,7 @@ p {
     margin-top: 1.5rem;
 }
 
-/* Audio Control styling */
-.audio-control {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
 
-.music-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    padding: 8px 16px;
-    border-radius: 30px;
-    color: var(--primary-darker);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: var(--shadow-subtle);
-    transition: var(--transition-smooth);
-}
-
-.music-btn:hover {
-    background: var(--white);
-    transform: translateY(-2px);
-}
-
-.music-btn.playing i {
-    animation: pulse-soft 1.2s infinite;
-}
 
 /* Hero Section - Text overlaying banner without shadows/borders/cards */
 .hero {
@@ -1254,7 +1221,6 @@ p {
         print-color-adjust: exact;
     }
 
-    .music-btn,
     .floating-bg-elements,
     #addToCalendarBtn,
     .footer-date {
