@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fully percent-encode to prevent emoji character encoding issues (like ? instead of emoji)
         const encodedText = encodeURIComponent(baseMsg);
         
-        waMamaBtn.href = `https://wa.me/51912166533?text=${encodedText}`;
-        waPapaBtn.href = `https://wa.me/51977528816?text=${encodedText}`;
+        waMamaBtn.href = `https://api.whatsapp.com/send?phone=51912166533&text=${encodedText}`;
+        waPapaBtn.href = `https://api.whatsapp.com/send?phone=51977528816&text=${encodedText}`;
     }
 
     if (waAttendanceSelect) {
