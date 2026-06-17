@@ -593,9 +593,15 @@ p {
     gap: 1.5rem;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px) {
     .gift-options {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .gift-options {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
