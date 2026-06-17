@@ -51,31 +51,58 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
     const countdownInterval = setInterval(updateCountdown, 1000);
 
-    // --- BACKGROUND MUSIC ---
-    const bgMusic = document.getElementById('bgMusic');
+    // --- BACKGROUND MUSIC (YOUTUBE API) ---
     const musicToggle = document.getElementById('musicToggle');
     let isPlaying = false;
+    let playerReady = false;
 
-    // Use a soft, elegant instrumental lullaby
-    if (bgMusic) {
-        bgMusic.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'; // soft, relaxing song
-        bgMusic.volume = 0.3; // Low volume background music
+    // Load the YouTube API script asynchronously
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // YouTube global callback must be defined on window
+    window.onYouTubeIframeAPIReady = function() {
+        window.ytPlayer = new YT.Player('ytPlayer', {
+            height: '0',
+            width: '0',
+            videoId: 'j_HtWK0wQxQ',
+            playerVars: {
+                'autoplay': 0,
+                'loop': 1,
+                'playlist': 'j_HtWK0wQxQ', // Loop requires playlist in YouTube API
+                'controls': 0,
+                'showinfo': 0,
+                'rel': 0,
+                'modestbranding': 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    };
+
+    function onPlayerReady(event) {
+        window.ytPlayer.setVolume(30);
+        playerReady = true;
     }
 
-    if (musicToggle && bgMusic) {
+    if (musicToggle) {
         musicToggle.addEventListener('click', () => {
+            if (!playerReady || !window.ytPlayer) {
+                console.log("YouTube Player is not ready yet.");
+                return;
+            }
+
             if (isPlaying) {
-                bgMusic.pause();
+                window.ytPlayer.pauseVideo();
                 musicToggle.classList.remove('playing');
                 musicToggle.innerHTML = '<i class="fas fa-music"></i> Activar Música 🎵';
             } else {
-                // Play music (might be blocked by browser policy until user interacts, which is handled here)
-                bgMusic.play().then(() => {
-                    musicToggle.classList.add('playing');
-                    musicToggle.innerHTML = '<i class="fas fa-pause"></i> Pausar Música ⏸️';
-                }).catch(err => {
-                    console.log("Audio playback was prevented by browser auto-play policy.", err);
-                });
+                window.ytPlayer.playVideo();
+                musicToggle.classList.add('playing');
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i> Pausar Música ⏸️';
             }
             isPlaying = !isPlaying;
         });
