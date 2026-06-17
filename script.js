@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isPlaying) {
                 bgMusic.pause();
                 musicToggle.classList.remove('playing');
-                musicToggle.querySelector('i').className = 'fas fa-music';
+                musicToggle.innerHTML = '<i class="fas fa-music"></i> Activar Música 🎵';
             } else {
                 // Play music (might be blocked by browser policy until user interacts, which is handled here)
                 bgMusic.play().then(() => {
                     musicToggle.classList.add('playing');
-                    musicToggle.querySelector('i').className = 'fas fa-pause';
+                    musicToggle.innerHTML = '<i class="fas fa-pause"></i> Pausar Música ⏸️';
                 }).catch(err => {
                     console.log("Audio playback was prevented by browser auto-play policy.", err);
                 });
