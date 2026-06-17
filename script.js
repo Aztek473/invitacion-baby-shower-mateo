@@ -102,7 +102,39 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- RSVP FORM LOGIC REMOVED (DIRECT WHATSAPP CONFIRMATION USED) ---
+    // --- WHATSAPP DYNAMIC RSVP LOGIC ---
+    const waAttendanceSelect = document.getElementById('waAttendance');
+    const waMamaBtn = document.getElementById('waMamaBtn');
+    const waPapaBtn = document.getElementById('waPapaBtn');
+
+    function updateWhatsAppLinks() {
+        if (!waAttendanceSelect || !waMamaBtn || !waPapaBtn) return;
+        
+        const selection = waAttendanceSelect.value;
+        let baseMsg = "¡Hola! Confirmo mi asistencia al Baby Shower de Mateo José. ";
+        
+        if (selection === 'solo') {
+            baseMsg += "Iré solo/a. 🍼";
+        } else if (selection === 'acompanante') {
+            baseMsg += "Iré con 1 acompañante. 🍼";
+        } else if (selection === 'acompanantes') {
+            baseMsg += "Iré con acompañantes. 🍼";
+        } else if (selection === 'no_asistire') {
+            baseMsg = "¡Hola! Lamentablemente no podré asistir al Baby Shower de Mateo José. Les envío un fuerte abrazo. ❤️";
+        }
+        
+        // Fully percent-encode to prevent emoji character encoding issues (like ? instead of emoji)
+        const encodedText = encodeURIComponent(baseMsg);
+        
+        waMamaBtn.href = `https://wa.me/51912166533?text=${encodedText}`;
+        waPapaBtn.href = `https://wa.me/51977528816?text=${encodedText}`;
+    }
+
+    if (waAttendanceSelect) {
+        waAttendanceSelect.addEventListener('change', updateWhatsAppLinks);
+        // Initialize on page load
+        updateWhatsAppLinks();
+    }
 
     // --- ADD TO CALENDAR LINK ---
     const addToCalendarBtn = document.getElementById('addToCalendarBtn');
