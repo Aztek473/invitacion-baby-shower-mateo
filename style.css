@@ -326,6 +326,7 @@ p {
 @media (max-width: 768px) {
     .hero-subtitle {
         font-size: 50px;
+        margin-top: 80px;
     }
 
     .hero-title {
@@ -362,7 +363,7 @@ p {
 
 @media (max-width: 576px) {
     .hero-tagline {
-        margin-top: 180px;
+        margin-top: 300px;
         /* Proportional gap on small mobile screens */
         font-size: 1.05rem;
     }
@@ -370,7 +371,7 @@ p {
 
 /* Sections & Cards */
 .section {
-    padding: 3rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     max-width: 100%;
     margin: 0 auto;
 }
