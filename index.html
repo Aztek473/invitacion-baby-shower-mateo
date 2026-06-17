@@ -107,15 +107,10 @@
                         <span class="label">Seg.</span>
                     </div>
                 </div>
-                <!-- Interactive Action buttons -->
-                <div class="action-buttons-row">
-                    <button class="btn btn-secondary" id="addToCalendarBtn">
-                        <i class="fa-regular fa-calendar-plus"></i> Guardar Fecha
-                    </button>
-                    <button class="btn btn-outline" onclick="window.print()">
-                        <i class="fa-solid fa-file-pdf"></i> Imprimir / PDF
-                    </button>
-                </div>
+                <!-- Interactive Add to Calendar button -->
+                <button class="btn btn-secondary mt-4" id="addToCalendarBtn">
+                    <i class="fa-regular fa-calendar-plus"></i> Guardar Fecha
+                </button>
             </div>
         </section>
 
@@ -190,11 +185,20 @@
                 <p class="subtitle-p">Para ayudarnos a organizar este día tan especial, por favor confírmanos tu asistencia enviándonos un WhatsApp directo:</p>
                 
                 <div class="whatsapp-container">
+                    <div class="attendance-select-container">
+                        <label for="waAttendance" class="wa-label">Detalle de Asistencia:</label>
+                        <select id="waAttendance" class="wa-select">
+                            <option value="solo">Asistiré solo/a</option>
+                            <option value="acompanante">Asistiré con 1 acompañante</option>
+                            <option value="acompanantes">Asistiré con acompañantes</option>
+                            <option value="no_asistire">Lamentablemente no podré asistir</option>
+                        </select>
+                    </div>
                     <div class="whatsapp-buttons">
-                        <a href="https://wa.me/51912166533?text=%C2%A1Hola%21+Confirmo+mi+asistencia+al+Baby+Shower+de+Mateo+Jos%C3%A9.+%F0%9F%8D%BC" target="_blank" class="btn btn-whatsapp btn-large">
+                        <a id="waMamaBtn" href="#" target="_blank" class="btn btn-whatsapp btn-large">
                             <i class="fa-brands fa-whatsapp"></i> Confirmar con Mamá
                         </a>
-                        <a href="https://wa.me/51977528816?text=%C2%A1Hola%21+Confirmo+mi+asistencia+al+Baby+Shower+de+Mateo+Jos%C3%A9.+%F0%9F%8D%BC" target="_blank" class="btn btn-whatsapp btn-large">
+                        <a id="waPapaBtn" href="#" target="_blank" class="btn btn-whatsapp btn-large">
                             <i class="fa-brands fa-whatsapp"></i> Confirmar con Papá
                         </a>
                     </div>
