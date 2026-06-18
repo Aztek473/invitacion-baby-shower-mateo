@@ -61,7 +61,7 @@ body {
     max-width: 1000px;
     /* Capped central width to 1000px maximum */
     width: 95%;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     padding-bottom: 2rem;
     background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(1px);
