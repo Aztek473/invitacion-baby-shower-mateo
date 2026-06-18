@@ -313,7 +313,7 @@ p {
     color: #1a365d;
     /* Dark navy for high contrast */
     font-family: var(--font-sans);
-    margin-top: 460px;
+    margin-top: 890px;
     /* Moves tagline below the elephant */
     line-height: 1.5;
     letter-spacing: 0.5px;
@@ -322,7 +322,7 @@ p {
 
 @media (max-width: 768px) {
     .hero-tagline {
-        margin-top: 450px;
+        margin-top: 750px;
         /* Proportional gap on tablet/mobile height */
         font-size: 1.15rem;
     }
@@ -330,7 +330,7 @@ p {
 
 @media (max-width: 576px) {
     .hero-tagline {
-        margin-top: 300px;
+        margin-top: 750px;
         /* Proportional gap on small mobile screens */
         font-size: 1.05rem;
     }
